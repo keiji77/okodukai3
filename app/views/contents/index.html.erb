@@ -1,0 +1,7 @@
+<h1>履歴</h1>
+<% @contents.each do |content| %>
+    <p>| <%= content.time %> | <%= content.detail %> | <%= content.yen %> | <%= content.buy_or_sell %> </p>
+    <%= link_to "上記を削除する", content_path(content), method: :delete, data: {confirm: "削除しますか?"} %>
+    <%= link_to "上記を編集する", edit_content_path(content) %></br>
+<% end %>
+<h1><%= link_to "投稿する", new_content_path %></h1>

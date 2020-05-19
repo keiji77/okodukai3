@@ -1,0 +1,9 @@
+<h2>新しく登録する</h2>
+<%= form_with model: @content, local: true do |f| %>
+  <p>いつ：<%= f.date_select :time, start_year: 2015, end_year: Time.current.year, use_month_numbers: true %></p>
+  <p>なに：<%= f.text_field :detail %></p>
+  <p>いくら：<%= f.text_field :yen %>円</p>
+  <label><%= f.radio_button :buy_or_sell, "使った" %>使った</label>
+  <label><%= f.radio_button :buy_or_sell, "貰った" %>貰った</label>
+  <input type="submit" value="登録する">
+<% end %>
